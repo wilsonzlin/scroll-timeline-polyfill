@@ -1820,7 +1820,7 @@ export class ProxyAnimation {
   get id() {
     return proxyAnimations.get(this).animation.id;
   }
-  
+
   set id(value) {
     proxyAnimations.get(this).animation.id = value;
   }
@@ -1863,6 +1863,10 @@ export class ProxyAnimation {
 
     // Extra step in the polyfill the ensure the animation stops ticking.
     removeAnimation(details.timeline, details.animation);
+  }
+
+  commitStyles() {
+    proxyAnimations.get(this).animation.commitStyles();
   }
 
   get onfinish() {
