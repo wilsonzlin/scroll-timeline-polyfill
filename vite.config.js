@@ -12,10 +12,7 @@ export default defineConfig({
       fileName: (format, entryAlias) => `scroll-timeline${format=='iife'?'':'-' + format}.js`,
       formats: ['iife'],
     },
-    minify: 'terser',
-    terserOptions: {
-      keep_classnames: /^((View|Scroll)Timeline)|CSS.*$/
-    },
+    minify: false,
     rollupOptions: {
       output: {
         // Provide global variables to use in the UMD build
