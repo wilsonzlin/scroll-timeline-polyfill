@@ -23,11 +23,9 @@ import {
   ProxyAnimation
 } from "./proxy-animation.js";
 
-import { initCSSPolyfill } from "./scroll-timeline-css"
-
 function initPolyfill() {
-  // initCSSPolyfill returns true iff the host browser supports SDA
-  if (initCSSPolyfill()) {
+  // Don't load if browser claims support
+  if (CSS.supports("animation-timeline: --works")) {
     return;
   }
 
